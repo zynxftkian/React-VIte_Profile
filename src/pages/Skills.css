@@ -1,0 +1,130 @@
+.skills-page { padding: 60px 0 100px; }
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+
+.skill-item {
+  background: rgba(255,255,255,0.09);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--r-md);
+  padding: 18px 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  box-shadow: var(--glass-shadow);
+  transition: border-color 0.25s, box-shadow 0.25s, transform 0.25s;
+}
+.skill-item:hover {
+  border-color: var(--glass-border-h);
+  box-shadow: var(--glass-shadow-h);
+  transform: translateY(-3px);
+}
+
+.skill-item__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.skill-item__name {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: -0.01em;
+}
+
+.skill-item__icon { font-size: 1.2rem; }
+.skill-item__pct { font-family: var(--font-mono); font-size: 0.85rem; font-weight: 500; }
+
+.progress-track {
+  height: 5px;
+  background: rgba(255,255,255,0.06);
+  border-radius: 99px;
+  overflow: hidden;
+  position: relative;
+}
+.progress-fill {
+  height: 100%;
+  border-radius: 99px;
+  position: relative;
+}
+.progress-fill::after {
+  content: '';
+  position: absolute;
+  right: 0; top: 0; bottom: 0;
+  width: 20px;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4));
+  border-radius: 99px;
+}
+
+.skill-item__cat {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+.tools-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 12px;
+  margin-top: 28px;
+}
+
+.tool-card {
+  padding: 18px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  cursor: default;
+}
+
+.tool-card__name {
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--text-mid);
+  text-align: center;
+}
+
+.learning-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 24px;
+}
+
+.learning-chip {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 15px;
+  border-radius: 99px;
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.1);
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text-mid);
+  transition: all 0.22s;
+}
+.learning-chip:hover {
+  border-color: rgba(52,216,172,0.3);
+  color: var(--text);
+  background: rgba(52,216,172,0.06);
+}
+
+@media (max-width: 768px) {
+  .skills-page { padding: 40px 0 80px; }
+  .skills-grid { grid-template-columns: 1fr; }
+  .tools-grid { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 480px) {
+  .tools-grid { grid-template-columns: repeat(2, 1fr); }
+  .skill-item { padding: 14px 16px; }
+}
